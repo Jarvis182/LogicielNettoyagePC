@@ -13,7 +13,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="150" Stroke="Black" VerticalAlignment="Top" Width="1000" Opacity="0.5" Fill="Red" RenderTransformOrigin="0.5,0.5">
+        <Rectangle HorizontalAlignment="Center" Height="150" Stroke="Black" VerticalAlignment="Top" Width="1000" Opacity="0.5" Fill="Black" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -30,13 +30,13 @@
         <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
         <Label x:Name="Espace" Content="??? Mb" HorizontalAlignment="Left" Margin="237,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}" RenderTransformOrigin="1.362,0.882"/>
         <Label x:Name="Date" Content="Jamais" HorizontalAlignment="Left" Margin="238,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
-        <Button Name="LancerAnalyse" Content="ANALYSER" HorizontalAlignment="Left" Margin="733,14,0,0" VerticalAlignment="Top" Height="49" Width="173" Background="#FF573AA4" Foreground="White" FontWeight="Bold" FontSize="18" BorderBrush="White" BorderThickness="5,5,5,5" Click="LancerAnalyse_Click"/>
+        <Button Name="LancerAnalyse" Content="ANALYSER" HorizontalAlignment="Left" Margin="688,44,0,0" VerticalAlignment="Top" Height="58" Width="270" Background="#FF573AA4" Foreground="White" FontWeight="Bold" FontSize="18" BorderBrush="White" BorderThickness="5,5,5,5" Click="LancerAnalyse_Click"/>
 
         <!--Séparation-->
-        <Rectangle HorizontalAlignment="Center" Height="8" Stroke="Black" VerticalAlignment="Top" Width="1000 " Opacity="0.5" Fill="White" RenderTransformOrigin="0.5,0.5" Margin="0,150,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="8" Stroke="Black" VerticalAlignment="Top" Width="1000 " Opacity="0.5" Fill="Red" RenderTransformOrigin="0.5,0.5" Margin="0,150,0,0"/>
 
         <!--VuePrincipal-->
-            <!--NETTOYER-->
+        <!--NETTOYER-->
         <Button x:Name="Bouton_NETTOYER" 
                 Click="Bouton_NETTOYER_Click"
                 HorizontalAlignment="Left" 
@@ -53,12 +53,12 @@
                 <Image  Source="/icons8-balayer-100 (1).png" 
                         Height="50" 
                         Width="50"/>
-                <TextBlock Text="NETTOYER" 
+                <TextBlock Text="NETTOYER LE PC" 
                            Margin="0 20 0 0"/>
             </StackPanel>
         </Button>
-        
-            <!--HISTORIQUE-->
+
+        <!--HISTORIQUE-->
         <Button x:Name="Bouton_HISTORIQUE" 
                 Click="Bouton_HISTORIQUE_Click"
                 HorizontalAlignment="Left" 
@@ -72,17 +72,16 @@
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
-        <StackPanel Orientation="Vertical">
-            <Image Height="50" 
+            <StackPanel Orientation="Vertical">
+                <Image Height="50" 
                    Width="50" 
                    Source="/icons8-menu-cerclé-96.png"/>
-            <TextBlock Text="HISTORIQUE" 
+                <TextBlock Text="HISTORIQUE" 
                        Margin="0 20 0 0"/>
-        </StackPanel>
+            </StackPanel>
         </Button>
 
-
-            <!--METTRE A JOUR-->
+        <!--METTRE A JOUR-->
         <Button x:Name="Bouton_MAJ" 
                 Click="Bouton_MAJ_Click"
                 HorizontalAlignment="Left" 
@@ -96,17 +95,16 @@
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
-        <StackPanel Orientation="Vertical">
-            <Image Height="50" 
+            <StackPanel Orientation="Vertical">
+                <Image Height="50" 
                    Width="50" 
                    Source="/icons8-synchroniser-50.png" />
-            <TextBlock Text="METTRE A JOUR" 
+                <TextBlock Text="MISE A JOUR" 
                        Margin="0 20 0 0"/>
-        </StackPanel>
+            </StackPanel>
         </Button>
 
-
-            <!--SITE WEB-->
+        <!--SITE WEB-->
         <Button x:Name="Bouton_WEB"
                 Click="Bouton_WEB_Click"
                 HorizontalAlignment="Left" 
@@ -120,20 +118,19 @@
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
-        <StackPanel Orientation="Vertical">
-            <Image Height="50" 
+            <StackPanel Orientation="Vertical">
+                <Image Height="50" 
                    Width="50" 
                    Source="/icons8-internet-100.png" />
-                <TextBlock Text="SITE WEB" 
+                <TextBlock Text="SITE WEB WWW" 
                            Margin="0 20 0 0"/>
-        </StackPanel>
+            </StackPanel>
         </Button>
 
         <!--Footer-->
         <Label x:Name="footer" Content="-=Copyright 2023=-" HorizontalAlignment="Left" Margin="921,562,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="22"/>
         <Rectangle Name="MàJ" HorizontalAlignment="Center" Height="20 " VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,564,0,0" Visibility="Hidden"/>
         <Label x:Name="MaJ" Content="Recherche de mises à jour :" HorizontalAlignment="Center" Margin="10,561,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontFamily="Calibri" Background="{x:Null}" Height="20" FontSize="10" Visibility="Hidden"/>
-        
 
     </Grid>
 </Window>
