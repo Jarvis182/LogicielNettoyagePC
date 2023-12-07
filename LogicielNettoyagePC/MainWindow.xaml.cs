@@ -69,8 +69,32 @@ namespace LogicielNettoyagePC
 
         private void Bouton_NETTOYER_Click(object sender, RoutedEventArgs e)
         {
-            //Console.WriteLine("Nettoyage en cours...");
-            //bouton
+            Console.WriteLine("Nettoyage en cours...");
+            Bouton_NETTOYER.Content = "...EN COURS";
+
+            Clipboard.Clear();
+
+            try
+            {
+                ClearTempData(winTemp);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Erreur : " + ex.Message);
+            }
+
+            try
+            {
+                ClearTempData(appTemp);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur : " + ex.Message);
+            }
+            Bouton_NETTOYER.Content = "PC OK !";
+            titre.Content = "Nettoyage effectué !";
+            Espace.Content = "0 Mb";
+
         }
 
         private void Bouton_HISTORIQUE_Click(object sender, RoutedEventArgs e)
@@ -116,6 +140,7 @@ namespace LogicielNettoyagePC
             }
 
             Espace.Content = totalSize + " Mb";
+            titre.Content = "Analyse effectué !";
             Date.Content = DateTime.Today;
         }
     }

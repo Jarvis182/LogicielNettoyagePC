@@ -25,7 +25,7 @@
         </Rectangle>
 
         <!--Header-->
-        <Label Content="Analyse du PC nécessaire !" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
+        <Label x:Name ="titre" Content="Analyse du PC nécessaire !" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
         <Label Content="Espace à nettoyer :" HorizontalAlignment="Left" Margin="76,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial"/>
         <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
         <Label x:Name="Espace" Content="??? Mb" HorizontalAlignment="Left" Margin="237,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}" RenderTransformOrigin="1.362,0.882"/>
