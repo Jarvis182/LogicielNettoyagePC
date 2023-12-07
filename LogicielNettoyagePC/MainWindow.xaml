@@ -13,7 +13,7 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="150" Stroke="Black" VerticalAlignment="Top" Width="1000" Opacity="0.5" Fill="Black" RenderTransformOrigin="0.5,0.5">
+        <Rectangle Name="alerte" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="1000" Opacity="0.8" Fill="Black" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,7 +25,7 @@
         </Rectangle>
 
         <!--Header-->
-        <Label x:Name ="titre" Content="Analyse du PC nécessaire !" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
+        <Label x:Name ="titre" Content="Lancer l'Analyse" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
         <Label Content="Espace à nettoyer :" HorizontalAlignment="Left" Margin="76,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial"/>
         <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
         <Label x:Name="Espace" Content="??? Mb" HorizontalAlignment="Left" Margin="237,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}" RenderTransformOrigin="1.362,0.882"/>
@@ -128,9 +128,9 @@
         </Button>
 
         <!--Footer-->
-        <Label x:Name="footer" Content="-=Copyright 2023=-" HorizontalAlignment="Left" Margin="921,562,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="22"/>
-        <Rectangle Name="MàJ" HorizontalAlignment="Center" Height="20 " VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,564,0,0" Visibility="Hidden"/>
-        <Label x:Name="MaJ" Content="Recherche de mises à jour :" HorizontalAlignment="Center" Margin="10,561,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontFamily="Calibri" Background="{x:Null}" Height="20" FontSize="10" Visibility="Hidden"/>
+        <Label x:Name="footer" Content="-=Copyright 2023=-" HorizontalAlignment="Left" Margin="921,564,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="20"/>
+        <Rectangle Name="bandeauTxt" HorizontalAlignment="Center" Height="20 " VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,564,0,0" Visibility="Hidden"/>
+        <Label x:Name="actuTxt" Content="Recherche de mises à jour :" HorizontalAlignment="Center" Margin="10,561,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontFamily="Calibri" Background="{x:Null}" Height="20" FontSize="10" Visibility="Hidden"/>
 
     </Grid>
 </Window>

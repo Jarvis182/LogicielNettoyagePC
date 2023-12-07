@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace LogicielNettoyagePC
     /// </summary>
     public partial class MainWindow : Window
     {
+        string version = "1.0.0";
         public DirectoryInfo winTemp;
         public DirectoryInfo appTemp;
 
@@ -28,7 +30,42 @@ namespace LogicielNettoyagePC
             InitializeComponent();
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
             appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
+            // CheckActu();
         }
+
+        //public void CheckActu()
+        //{
+        //    string url = "http://localhost/siteweb/actu.txt";
+        //    using (WebClient client = new WebClient())
+        //    {
+        //        string actu = client.DownloadString(url);
+        //        if (actu != String.Empty)
+        //        {
+        //            actuTxt.Content = actu;
+        //            actuTxt.Visibility = Visibility.Visible;
+        //            bandeauTxt.Visibility = Visibility.Visible;
+        //        }
+
+        //    } 
+        //}
+
+        //public void CheckVersion()
+        //{
+        //    string url = "http://localhost/siteweb/version.txt";
+        //    using (WebClient client = new WebClient())
+        //    {
+        //        string v = client.DownloadString(url);
+        //        if (version != v)
+        //        {
+        //            MessageBox.Show("Une mise à jour est dispo !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Votre logiciel est à jour !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        }
+
+        //    }
+        //}
 
         // Calcul de la taille d'un dossier
         public long DirSize(DirectoryInfo dir)
@@ -48,9 +85,7 @@ namespace LogicielNettoyagePC
                     // totalRemovedFiles++;
                 }
                 catch (Exception ex)
-                {
-                    continue;
-                }
+                { continue; }
             }
             foreach (DirectoryInfo dir in di.GetDirectories())
             {
@@ -61,9 +96,7 @@ namespace LogicielNettoyagePC
                     // totalRemovedFiles++;
                 }
                 catch (Exception ex)
-                {
-                    continue;
-                }
+                { continue;}
             }
         }
 
@@ -71,9 +104,7 @@ namespace LogicielNettoyagePC
         {
             Console.WriteLine("Nettoyage en cours...");
             Bouton_NETTOYER.Content = "...EN COURS";
-
             Clipboard.Clear();
-
             try
             {
                 ClearTempData(winTemp);
@@ -82,7 +113,6 @@ namespace LogicielNettoyagePC
             {
                 Console.WriteLine("Erreur : " + ex.Message);
             }
-
             try
             {
                 ClearTempData(appTemp);
@@ -94,7 +124,7 @@ namespace LogicielNettoyagePC
             Bouton_NETTOYER.Content = "PC OK !";
             titre.Content = "Nettoyage effectué !";
             Espace.Content = "0 Mb";
-
+            alerte.Fill = Brushes.LimeGreen;
         }
 
         private void Bouton_HISTORIQUE_Click(object sender, RoutedEventArgs e)
@@ -104,7 +134,7 @@ namespace LogicielNettoyagePC
 
         private void Bouton_MAJ_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Votre logiciel est à jour!", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+            // CheckVersion();
         }
 
         private void Bouton_WEB_Click(object sender, RoutedEventArgs e)
@@ -128,7 +158,6 @@ namespace LogicielNettoyagePC
         {
             Console.WriteLine("Début de l'analyse...");
             long totalSize = 0;
-
             try
             {
                 totalSize += DirSize(winTemp) / 1000000;
@@ -138,10 +167,10 @@ namespace LogicielNettoyagePC
             {
                 Console.WriteLine("Impossible d'analyser les dossiers : " + ex.Message);
             }
-
             Espace.Content = totalSize + " Mb";
-            titre.Content = "Analyse effectué !";
+            titre.Content = "Veuillez nettoyez votre PC !";
             Date.Content = DateTime.Today;
+            alerte.Fill = Brushes.Red;
         }
     }
 }
