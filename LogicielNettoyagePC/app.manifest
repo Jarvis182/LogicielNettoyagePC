@@ -16,7 +16,8 @@
             Supprimez cet élément si votre application a besoin de la virtualisation pour des
             raisons de compatibilité descendante.
         -->
-        <requestedExecutionLevel level="requireAdministrator" uiAccess="false" />
+		  <!-- asInvoker / requireAdministrator -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
       </requestedPrivileges>
     </security>
   </trustInfo>

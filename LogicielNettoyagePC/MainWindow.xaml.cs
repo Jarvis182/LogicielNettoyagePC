@@ -39,7 +39,7 @@ namespace LogicielNettoyagePC
         // Vider un dossier
         public void ClearTempData(DirectoryInfo di)
         {
-            foreach(FileInfo file in di.GetFiles())
+            foreach (FileInfo file in di.GetFiles())
             {
                 try
                 {
@@ -69,7 +69,8 @@ namespace LogicielNettoyagePC
 
         private void Bouton_NETTOYER_Click(object sender, RoutedEventArgs e)
         {
-
+            //Console.WriteLine("Nettoyage en cours...");
+            //bouton
         }
 
         private void Bouton_HISTORIQUE_Click(object sender, RoutedEventArgs e)
@@ -88,7 +89,7 @@ namespace LogicielNettoyagePC
             {
                 Process.Start(new ProcessStartInfo("https://www.ccleaner.com/fr-fr") { UseShellExecute = true });
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Console.WriteLine("Erreur :  " + ex.Message);
             }
@@ -108,7 +109,8 @@ namespace LogicielNettoyagePC
             {
                 totalSize += DirSize(winTemp) / 1000000;
                 totalSize += DirSize(appTemp) / 1000000;
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine("Impossible d'analyser les dossiers : " + ex.Message);
             }
