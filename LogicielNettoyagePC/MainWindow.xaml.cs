@@ -31,6 +31,7 @@ namespace LogicielNettoyagePC
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
             appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
             // CheckActu();
+            GetDate();
         }
 
         //public void CheckActu()
@@ -96,7 +97,7 @@ namespace LogicielNettoyagePC
                     // totalRemovedFiles++;
                 }
                 catch (Exception ex)
-                { continue;}
+                { continue; }
             }
         }
 
@@ -109,7 +110,7 @@ namespace LogicielNettoyagePC
             {
                 ClearTempData(winTemp);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("Erreur : " + ex.Message);
             }
@@ -171,6 +172,22 @@ namespace LogicielNettoyagePC
             titre.Content = "Veuillez nettoyez votre PC !";
             Date.Content = DateTime.Today;
             alerte.Fill = Brushes.Red;
+            SaveDate();
+        }
+
+        public void SaveDate()
+        {
+            string date = DateTime.Today.ToString();
+            File.WriteAllText("date.txt", date);
+        }
+
+        public void GetDate()
+        {
+            string dateFichier = File.ReadAllText("date.txt");
+            if (dateFichier != String.Empty)
+            {
+                Date.Content = dateFichier;
+            }
         }
     }
 }
