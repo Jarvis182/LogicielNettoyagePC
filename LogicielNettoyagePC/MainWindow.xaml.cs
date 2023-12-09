@@ -20,7 +20,7 @@ namespace LogicielNettoyagePC
     /// </summary>
     public partial class MainWindow : Window
     {
-        string version = "1.0.0";
+        string version = "1.0";
         public DirectoryInfo winTemp;
         public DirectoryInfo appTemp;
 
@@ -30,43 +30,42 @@ namespace LogicielNettoyagePC
             InitializeComponent();
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
             appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
-            // CheckActu();
+            CheckActu();
             GetDate();
         }
 
-        //public void CheckActu()
-        //{
-        //    string url = "http://localhost/siteweb/actu.txt";
-        //    using (WebClient client = new WebClient())
-        //    {
-        //        string actu = client.DownloadString(url);
-        //        if (actu != String.Empty)
-        //        {
-        //            actuTxt.Content = actu;
-        //            actuTxt.Visibility = Visibility.Visible;
-        //            bandeauTxt.Visibility = Visibility.Visible;
-        //        }
+        public void CheckActu()
+        {
+            string url = "http://localhost/siteweb/LogicielNettoyagePC/actu.txt";
+            using (WebClient client = new WebClient())
+            {
+                string actu = client.DownloadString(url);
+                if (actu != String.Empty)
+                {
+                    actuTxt.Content = actu;
+                    actuTxt.Visibility = Visibility.Visible;
+                    bandeauTxt.Visibility = Visibility.Visible;
+                }
 
-        //    } 
-        //}
+            }
+        }
+        public void CheckVersion()
+        {
+            string url = "http://localhost/siteweb/LogicielNettoyagePC/version.txt";
+            using (WebClient client = new WebClient())
+            {
+                string v = client.DownloadString(url);
+                if (version != v)
+                {
+                    MessageBox.Show("Une mise à jour est dispo !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Votre logiciel est à jour !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
 
-        //public void CheckVersion()
-        //{
-        //    string url = "http://localhost/siteweb/version.txt";
-        //    using (WebClient client = new WebClient())
-        //    {
-        //        string v = client.DownloadString(url);
-        //        if (version != v)
-        //        {
-        //            MessageBox.Show("Une mise à jour est dispo !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("Votre logiciel est à jour !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
-        //        }
-
-        //    }
-        //}
+            }
+        }
 
         // Calcul de la taille d'un dossier
         public long DirSize(DirectoryInfo dir)
@@ -135,7 +134,7 @@ namespace LogicielNettoyagePC
 
         private void Bouton_MAJ_Click(object sender, RoutedEventArgs e)
         {
-            // CheckVersion();
+            CheckVersion();
         }
 
         private void Bouton_WEB_Click(object sender, RoutedEventArgs e)

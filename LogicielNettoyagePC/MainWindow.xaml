@@ -12,7 +12,7 @@
             <GradientStop Color="#FF6946C6"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
+    <Grid Margin="0,0,0,-6">
         <Rectangle Name="alerte" HorizontalAlignment="Center" Height="150" VerticalAlignment="Top" Width="1000" Opacity="0.8" Fill="Black" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>
                 <TransformGroup>
@@ -33,7 +33,7 @@
         <Button Name="LancerAnalyse" Content="ANALYSER" HorizontalAlignment="Left" Margin="688,44,0,0" VerticalAlignment="Top" Height="58" Width="270" Background="#FF573AA4" Foreground="White" FontWeight="Bold" FontSize="18" BorderBrush="White" BorderThickness="5,5,5,5" Click="LancerAnalyse_Click"/>
 
         <!--Séparation-->
-        <Rectangle HorizontalAlignment="Center" Height="8" Stroke="Black" VerticalAlignment="Top" Width="1000 " Opacity="0.5" Fill="Red" RenderTransformOrigin="0.5,0.5" Margin="0,150,0,0"/>
+        <Rectangle HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Top" Width="1000 " Opacity="0.5" Fill="Red" RenderTransformOrigin="0.5,0.5" Margin="0,150,0,0"/>
 
         <!--VuePrincipal-->
         <!--NETTOYER-->
@@ -128,9 +128,9 @@
         </Button>
 
         <!--Footer-->
-        <Label x:Name="footer" Content="-=Copyright 2023=-" HorizontalAlignment="Left" Margin="921,564,0,0" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="20"/>
-        <Rectangle Name="bandeauTxt" HorizontalAlignment="Center" Height="20 " VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,564,0,0" Visibility="Hidden"/>
-        <Label x:Name="actuTxt" Content="Recherche de mises à jour :" HorizontalAlignment="Center" Margin="10,561,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontFamily="Calibri" Background="{x:Null}" Height="20" FontSize="10" Visibility="Hidden"/>
+        <Label x:Name="footer" Content="-=Copyright 2023=-" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="20" Width="80" HorizontalAlignment="Center" Margin="0,544,0,0"/>
+        <Rectangle  Name="bandeauTxt" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,155,0,0" />
+        <Label x:Name="actuTxt"  HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300" />
 
     </Grid>
 </Window>
