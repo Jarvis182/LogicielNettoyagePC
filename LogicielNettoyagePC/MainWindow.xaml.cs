@@ -57,7 +57,7 @@ namespace LogicielNettoyagePC
                 string v = client.DownloadString(url);
                 if (version != v)
                 {
-                    MessageBoxResult result = MessageBox.Show("Une mise à jour est dispo ! Voulez-vous la télécharger maintenant ?", "Mise à jour", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                    MessageBoxResult result = MessageBox.Show("Une nouvelle version est dispo ! Voulez-vous la télécharger maintenant ?", "Mise à jour", MessageBoxButton.OKCancel, MessageBoxImage.Question);
                     if (result == MessageBoxResult.OK)
                     {
                         try
