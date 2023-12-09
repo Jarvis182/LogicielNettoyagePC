@@ -66,7 +66,7 @@ namespace LogicielNettoyagePC
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("Erreur du site :  " + ex.Message);
+                            Console.WriteLine("Erreur :  " + ex.Message);
                         }
                     }
                 }
