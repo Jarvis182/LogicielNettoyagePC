@@ -57,7 +57,18 @@ namespace LogicielNettoyagePC
                 string v = client.DownloadString(url);
                 if (version != v)
                 {
-                    MessageBox.Show("Une mise à jour est dispo !", "Mise à jour", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxResult result = MessageBox.Show("Une mise à jour est dispo ! Voulez-vous la télécharger maintenant ?", "Mise à jour", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+                    if (result == MessageBoxResult.OK)
+                    {
+                        try
+                        {
+                            Process.Start(new ProcessStartInfo("https://www.ccleaner.com/fr-fr/ccleaner/download") { UseShellExecute = true });
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Erreur du site :  " + ex.Message);
+                        }
+                    }
                 }
                 else
                 {
