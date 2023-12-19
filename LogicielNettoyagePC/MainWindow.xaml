@@ -129,9 +129,45 @@
 
         <!--Footer-->
         <Label x:Name="footer" Content="-=Copyright 2023=-" VerticalAlignment="Top" Foreground="Black" BorderBrush="Black" FontSize="8" FontFamily="Arial" Background="#FF13FBCB" RenderTransformOrigin="0.367,-0.891" Height="20" Width="80" HorizontalAlignment="Center" Margin="0,544,0,0"/>
-        <Rectangle  Name="bandeauTxt" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,155,0,0" />
-        <Label x:Name="actuTxt"  HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300" />
+        <!--<Rectangle  Name="bandeauTxt" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="1000" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,155,0,0" />
+        <Label x:Name="actuTxt"  HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300" />-->
+        <Rectangle Name="bandeauTxt" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="169" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,155,0,0" />
 
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <Label x:Name="actuTxt" HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300">
+                Ceci est un exemple de texte qui peut défiler horizontalement.
+            </Label>
+        </ScrollViewer>
+
+        <!--<ScrollViewer Margin="200,489,200,46">
+            <TextBox 
+             Name="maZoneDeTexte"
+             TextWrapping="Wrap"
+             Height="35"
+             AcceptsReturn="True"
+             IsReadOnly="True"
+             HorizontalScrollBarVisibility="Auto" 
+             VerticalScrollBarVisibility="Auto" 
+             FontSize="16" Width="300">
+             Ceci est un exemple de texte qui peut défiler verticalement et horizontalement et dlsldkdmklfkdjskmlfdjks kfdsjfiokdshjfdshoisd hios ioio h oi io i i dhdhdu dhudhudhudh du hdu hdu dhu hdu hudh duh du hd.
+            </TextBox>
+        </ScrollViewer>-->
+
+        <ScrollViewer Margin="200,489,200,46">
+            <TextBox 
+            Name="maZoneDeTexte"
+            TextWrapping="Wrap"
+            Height="35"
+            AcceptsReturn="True"
+            IsReadOnly="True"
+            HorizontalScrollBarVisibility="Auto" 
+            VerticalScrollBarVisibility="Auto" 
+            FontSize="16" 
+            Width="300">
+                <!-- Ajoutez un texte suffisamment long pour nécessiter le défilement horizontal -->
+                Ceci est un exemple de texte qui peut défiler verticalement et horizontalement et dlsldkdmklfkdjskmlfdjks kfdsjfiokdshjfdshoisd hios ioio h oi io i i dhdhdu dhudhudhudh du hdu hdu dhu hdu hudh duh du hd.
+            </TextBox>
+        </ScrollViewer>
     </Grid>
 </Window>
  

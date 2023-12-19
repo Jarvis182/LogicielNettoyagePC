@@ -6,7 +6,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +14,10 @@
     <None Remove="icons8-internet-100.png" />
     <None Remove="icons8-menu-cerclé-96.png" />
     <None Remove="icons8-synchroniser-50.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="icons8-ce-pc-100.png" />
   </ItemGroup>
 
   <ItemGroup>

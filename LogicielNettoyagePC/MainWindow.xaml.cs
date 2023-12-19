@@ -28,6 +28,8 @@ namespace LogicielNettoyagePC
         public MainWindow()
         {
             InitializeComponent();
+            maZoneDeTexte.Text = "Ceci est un exemple de texte long qui dépasse la largeur de la zone de texte et devrait activer le défilement horizontal. bla bla bla blablabla bla bla bla blablabla bla bla bla blablabla bla bla bla blablabla bla bla bla blablabla bla bla bla blablabla bla bla bla blablablabla bla bla blablablabla bla bla blablablabla bla bla blablabla";
+
             winTemp = new DirectoryInfo(@"C:\Windows\Temp");
             appTemp = new DirectoryInfo(System.IO.Path.GetTempPath());
             CheckActu();
