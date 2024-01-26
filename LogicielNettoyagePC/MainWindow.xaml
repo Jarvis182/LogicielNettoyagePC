@@ -25,12 +25,19 @@
         </Rectangle>
 
         <!--Header-->
-        <Label x:Name ="titre" Content="Lancer l'Analyse" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
+        <Label x:Name ="titre" Content="Lancer une Analyse du PC" HorizontalAlignment="Left" Margin="66,20,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="24" FontFamily="Arial" FontWeight="Bold"/>
         <Label Content="Espace à nettoyer :" HorizontalAlignment="Left" Margin="76,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial"/>
         <Label Content="Dernière analyse :" HorizontalAlignment="Left" Margin="76,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
         <Label x:Name="Espace" Content="??? Mb" HorizontalAlignment="Left" Margin="237,66,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}" RenderTransformOrigin="1.362,0.882"/>
         <Label x:Name="Date" Content="Jamais" HorizontalAlignment="Left" Margin="238,99,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="Black" FontSize="16" FontFamily="Arial" Background="{x:Null}"/>
-        <Button Name="LancerAnalyse" Content="ANALYSER" HorizontalAlignment="Left" Margin="688,44,0,0" VerticalAlignment="Top" Height="58" Width="270" Background="#FF573AA4" Foreground="White" FontWeight="Bold" FontSize="18" BorderBrush="White" BorderThickness="5,5,5,5" Click="LancerAnalyse_Click"/>
+        <Button Name="LancerAnalyse" Content="ANALYSER" HorizontalAlignment="Left" Margin="688,44,0,0" VerticalAlignment="Top" Height="58" Width="270" Foreground="White" FontWeight="Bold" FontSize="18" BorderBrush="White" BorderThickness="5,5,5,5" Click="LancerAnalyse_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="Red" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
         <!--Séparation-->
         <Rectangle HorizontalAlignment="Center" Height="5" Stroke="Black" VerticalAlignment="Top" Width="1000 " Opacity="0.5" Fill="Red" RenderTransformOrigin="0.5,0.5" Margin="0,150,0,0"/>
@@ -44,11 +51,16 @@
                 VerticalAlignment="Top" 
                 Height="130" 
                 Width="240" 
-                Background="#FF573AA4" 
                 Foreground="White" 
                 FontWeight="Bold" FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF00FFF9" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <StackPanel Orientation="Vertical">
                 <Image  Source="/icons8-balayer-100 (1).png" 
                         Height="50" 
@@ -66,12 +78,17 @@
                 VerticalAlignment="Top" 
                 Height="130" 
                 Width="240" 
-                Background="#FF573AA4" 
                 Foreground="White" 
                 FontWeight="Bold" 
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF00FFF9" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <StackPanel Orientation="Vertical">
                 <Image Height="50" 
                    Width="50" 
@@ -89,12 +106,17 @@
                 VerticalAlignment="Top" 
                 Height="130" 
                 Width="240" 
-                Background="#FF573AA4" 
                 Foreground="White" 
                 FontWeight="Bold" 
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF00FFF9" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <StackPanel Orientation="Vertical">
                 <Image Height="50" 
                    Width="50" 
@@ -112,12 +134,17 @@
                 VerticalAlignment="Top" 
                 Height="130" 
                 Width="240" 
-                Background="#FF573AA4" 
                 Foreground="White" 
                 FontWeight="Bold" 
                 FontSize="18" 
                 BorderBrush="White" 
                 BorderThickness="5,5,5,5">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="#FF00FFF9" Offset="0"/>
+                </LinearGradientBrush>
+            </Button.Background>
             <StackPanel Orientation="Vertical">
                 <Image Height="50" 
                    Width="50" 
@@ -133,11 +160,10 @@
         <Label x:Name="actuTxt"  HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300" />-->
         <Rectangle Name="bandeauTxt" HorizontalAlignment="Center" Height="24" VerticalAlignment="Top" Width="169" Opacity="1" RenderTransformOrigin="0.5,0.5" Fill="#FFFF7729" Margin="0,155,0,0" />
 
-        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-            <Label x:Name="actuTxt" HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300">
-                Ceci est un exemple de texte qui peut défiler horizontalement.
-            </Label>
-        </ScrollViewer>
+        <Label x:Name="actuTxt" HorizontalAlignment="Center" Margin="0,155,0,0" VerticalAlignment="Top" Foreground="White" BorderBrush="MediumVioletRed" FontFamily="Calibri" Background="{x:Null}" Height="24" FontSize="15" Width="300">
+            Ceci est un exemple de texte qui peut défiler horizontalement.
+        </Label>
+
 
         <!--<ScrollViewer Margin="200,489,200,46">
             <TextBox 
